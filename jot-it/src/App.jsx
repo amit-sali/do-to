@@ -22,6 +22,13 @@ function App() {
          }
          event.preventDefault();
 
+         let list = todolist.map((value, index)=>{
+          return (
+            <ToDoListItems value={value}/>
+          )
+
+         })
+
   }
   
   return (
@@ -32,9 +39,16 @@ function App() {
         <form onSubmit={saveToDoList}>
           <input type='text' name='toname' />
           <button>save</button>
-          
         </form>
 
+<div className='outerDiv'>
+    <ul>
+        {}
+    </ul>
+
+</div>
+
+     
 
     </div>
    
@@ -42,4 +56,9 @@ function App() {
   )
 }
 
-export default App
+export default App ;
+
+
+function ToDoListItems({value}){
+  return  <li>{value} <span>&times;</span> </li>
+}
